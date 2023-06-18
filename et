@@ -1,0 +1,87 @@
+[33mcommit d92ca7743be36f38796967e1f3a88b47e5261532[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Jeff A <jara2000@gmail.com>
+Date:   Sat Jun 17 21:12:46 2023 -0400
+
+    remove empty line
+
+[33mcommit 54dd30adcda3cd2073a06ac1b2a501c2207b0f80[m
+Author: Jeff A <jara2000@gmail.com>
+Date:   Sat May 6 15:35:36 2023 -0400
+
+    Added Pass_wk to repo
+
+[33mcommit 3a4b156851a52cc018abeaeaafed77fd95490091[m
+Author: Jeff A <jara2000@gmail.com>
+Date:   Sat May 6 15:18:04 2023 -0400
+
+    Commi all
+
+[33mcommit e860b94f9e4caa365eb759bc3528478d9e29d150[m
+Author: Jeff A <jara2000@gmail.com>
+Date:   Sat May 6 15:16:53 2023 -0400
+
+    Replaced factory name to Jara2000
+
+[33mcommit 293da0c8dbaa7092bb58de7fa07129e069507b4f[m[33m ([m[1;33mtag: release[m[33m)[m
+Merge: a230979 4460471
+Author: jara2000 <47407926+jara2000@users.noreply.github.com>
+Date:   Tue May 2 21:44:35 2023 -0400
+
+    Merge pull request #1 from jara2000/includePhilippinesSugar
+    
+    Update index.htm - We should include Philippines as one of the countries we get sugar from
+
+[33mcommit 4460471cd657ffdf5c0f8d3882890d6b14f3bcdf[m[33m ([m[1;31morigin/includePhilippinesSugar[m[33m)[m
+Author: jara2000 <47407926+jara2000@users.noreply.github.com>
+Date:   Tue May 2 21:41:55 2023 -0400
+
+    Update index.htm
+
+[33mcommit a230979f4e716dff8b572d14f199da37a39abdfc[m
+Merge: efe865d a6a70f2
+Author: Jeff A <jara2000@gmail.com>
+Date:   Tue May 2 20:35:44 2023 -0400
+
+    update text in index.htm file
+
+[33mcommit efe865daecbe7a064af57bf752c4020b626a971c[m
+Author: Jeff A <jara2000@gmail.com>
+Date:   Tue May 2 20:19:24 2023 -0400
+
+    update index.htm text
+
+[33mcommit a6a70f2911b3eb3fac3215ce382eb3fb9666e526[m[33m ([m[1;31morigin/UpdateText[m[33m, [m[1;32mUpdateText[m[33m)[m
+Author: Jeff A <jara2000@gmail.com>
+Date:   Tue May 2 20:15:09 2023 -0400
+
+    update index.htm text entry
+
+[33mcommit 06ac21034f5877dfb5156d9441c88b7c49baad04[m
+Author: Jeff A <jara2000@gmail.com>
+Date:   Tue May 2 19:54:36 2023 -0400
+
+    updated temperature for baking instructions
+
+[33mcommit 94c3e94bc05d5a6a748d5d1dc4f01b3fc7fdb2cc[m
+Author: Jeff A <jara2000@gmail.com>
+Date:   Tue May 2 19:16:24 2023 -0400
+
+    Changed the filename of original .png image
+
+[33mcommit 48b2aa589e95a01017feed2e054d927a05b99d07[m
+Author: Jeff A <jara2000@gmail.com>
+Date:   Tue May 2 19:04:49 2023 -0400
+
+    updated to free range
+
+[33mcommit bb33ff5c62b74123c652f3ab113505dc8e975d2f[m
+Author: Jeff A <jara2000@gmail.com>
+Date:   Tue May 2 18:49:38 2023 -0400
+
+    second commit - commiting all files to the repository
+
+[33mcommit 397a6d6e0e6356b78515724ed56da1cc4c55a2b6[m
+Author: Jeff A <jara2000@gmail.com>
+Date:   Sun Apr 23 23:12:37 2023 -0400
+
+    first commit - commiting all files to the repository
