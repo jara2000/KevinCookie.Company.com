@@ -1,0 +1,448 @@
+Tuesday May 2, 2023
+
+Notes in  D:\Software\GIT\*
+Files in exercise are in  C:\Users\jara\KevinCookie.Company.com\*
+
+==================================================================
+
+
+https://www.youtube.com/watch?v=tRZGeaHPoaw  <-- This exercise based on this video  
+https://www.youtube.com/watch?v=DVRQoVRzMIY	 <-- another nice video
+
+https://www.youtube.com/watch?v=58zsLtwzL60&list=PL3Y9MECuxct0RMwdYcqoIjo-7ncRpTNLs   <-- 7 course sequence!
+
+
+GIT - is opensource and free !   
+
+git --version
+
+
+
+Source Control Management (SCM)
+
+git log
+git status
+
+
+git branch -d FixTemp		<- to delete branch FixTemp
+git branch
+git switch -c UpdateText    <- make your updates and once confident of changes, merge it back to the branch
+
+git switch main
+git commit -a -m "update index text"		<- ' -m ' for merge
+
+git restored --staged     	<- reverts back to a previous version
+
+--------------------------------------------------------------------------------------------------------------
+
+Download it  https://www.git-scm.com/download/win 
+
+1) Download the 4 KevinCookieCompany files from OneDrive location:
+	https://onedrive.live.com/?authkey=%21AJdw967%5FoljMamM&id=B09F9559F6A16B6C%2178117&cid=B09F9559F6A16B6C
+
+	The 4 files are:	
+		Employee Salaries.txt
+		KCC Logo.png
+		index.htm
+		secret recipe.htm
+   
+   save them to a folder   C:\Users\jara\KevinCookie.Company.com 
+
+	
+2) Open [GIT Bash] and configure a few things:
+
+	specify your name and email
+	
+	jara@i5-12600K MINGW64 ~ 
+	$ git config --global user.name "Jeff A."
+	$ git config --global user.email jara2000@gmail.com
+
+Set default branch to main:
+
+	jara@i5-12600K MINGW64 ~ 
+	$ git config --global init.default branch main
+
+Get help for any command with ' -h ':
+
+	jara@i5-12600K MINGW64 ~ 
+	$ git config -h		or    $ git help config
+	
+	jara@i5-12600K MINGW64 ~	
+	$ cd C:/Users/jara/KevinCookie.Company.com    		<- *use the unix slash '/' instead of windows slash '\' 
+
+Now turn into a GIT repo:	
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com
+	$ git init 
+	Initialized empty Git repository in C:/Users/jara/KevinCookie.Company.com/.git/				<- voila !
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)										<- a new hidden .git folder is created !
+	$ 
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com	
+	$ git status	
+	  On branch main
+	  
+	  No commits yet
+	  
+	  Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	  		Employee Salaries.txt
+	  		Git - OneDrive - to download files.url
+	  		KCC Logo.png
+	  		index.htm
+	  		secret recipe.htm
+	  
+	  nothing added to commit but untracked files present (use "git add" to track)
+	
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	
+	
+Lets track the file 'index.htm'	:
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git add index.htm				<- this adds tracking to file 'index.htm'
+	$ git status					<- we see that file 'index.htm' is being tracked and the 3 files untracked.
+
+	
+If you want to untrack (or unstage) the file 'index.htm':
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git rm --cached index.htm
+	$ git status					<- we now see 4 files untracked (unstaged) again
+
+
+We can choose GIT ignore a file by creating a text file .gitignore and listing the file(s) to ignore inside.
+In Explorer go to location C:\Users\jara\KevinCookie.Company.com  and create .gitignore (with no extension):
+(more info to ignore found here https://github.com/github/gitignore)
+	 
+	C:\Users\jara\KevinCookie.Company.com\.gitignore
+	
+	contents of file .gitignore  :
+	 #ignore all .txt files
+	 *.txt
+	 
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git status												<- Notice file 'Employee Salaries.txt' is no longer listed, it's ignored !
+.																   and currently no files are tracked.	
+
+if you wish to track all files do:
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git add --all   or   git add -A   or   git add .  			<- lets track all of the files
+	$ git status												<- all are tracked except for any .txt file
+.																   they are all in a 'staging environment'	
+
+We want to commit (like taking a snapshot of what these files look like now!):
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git commit -m "first commit - commiting all files to the repository"
+	[main (root-commit) 397a6d6] first commit - commiting all files to the repository
+	5 files changed, 44 insertions(+)
+	create mode 100644 .gitignore
+	create mode 100644 Git - OneDrive - to download files.url
+	create mode 100644 KCC Logo.png
+	create mode 100644 index.htm
+	create mode 100644 secret recipe.htm
+	
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$
+	
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git status
+	On branch main
+	nothing to commit, working tree clean
+
+
+We now want to modify the index.htm and save it.
+Next we would like to see what was modified,... using   'git diff' :
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git status
+	On branch main
+	Changes not staged for commit:
+	(use "git add <file>..." to update what will be committed)
+	(use "git restore <file>..." to discard changes in working directory)
+.			modified:   index.htm
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git diff
+
+Satisfied with changes, add new itteration of file 'index.htm' to the history,..
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git add index.htm											<-- file is now 'staged' in holding pen until committed!
+	
+	Should you prefer to revert back the changes and not commit you can:
+	$ git restore --staged index.htm
+	
+	or you could skip staging altogether and go straight to commit file from working (and edited file)
+	$ git commit -a -m "updated to free range"				<-- will skip staging step and commit file!
+	
+You can delete a file directly from git terminal:
+	$ git rm "secret recipe.htm"							<-- check in File Explorer and  it's gone !
+	
+	$ git status
+	On branch main
+	Changes to be committed:
+	(use "git restore --staged <file>..." to unstage)
+.       deleted:    secret recipe.htm						<-- git is tracking the deleted file
+
+Instead let's keep the file, I changed my mind...
+	$ git restore "secret recipe.htm"						<-- check in File Explorer and  it's back !
+
+What if qe just want to rename while in git terminal,.. try 'git mv'
+	$ git mv "KCC Logo.png" "Primary Logo.png"
+	
+Lets add this change to history books:
+	$ git commit -m "changed the filename  of a .png image"
+	
+		[main 87a682d] changed the filename  of a .png image
+		1 file changed, 0 insertions(+), 0 deletions(-)
+.		rename KCC Logo.png => Primary Logo.png (100%)
+	
+With all commits made, we would like to list them out:
+	$ git log												<-- Wow, long list, each commit has a uniq ID, author, date, etc,..  !
+.		
+		commit 87a682d14d350653fdc3e748c2015ecb916038a3 (HEAD -> main)
+		Author: Jeff A <jara2000@gmail.com>
+		Date:   Tue May 2 19:16:24 2023 -0400
+	
+		changed the filename  of a .png image
+	
+		commit 48b2aa589e95a01017feed2e054d927a05b99d07
+		Author: Jeff A <jara2000@gmail.com>
+		Date:   Tue May 2 19:04:49 2023 -0400
+	
+		updated to free range
+		...
+		...
+	
+	$ git log --oneline										<-- to see abreviated one liners of same list
+
+	87a682d (HEAD -> main) changed the filename  of a .png image
+	48b2aa5 updated to free range
+	bb33ff5 second commit - commiting all files to the repository
+	397a6d6 first commit - commiting all files to the repository
+	
+If you decided you wanted to change the previous commit (ID: 87a682d...) you can with '--amend' switch
+	$git commit -m "Changed the filename of original .png image" --amend
+	
+		[main 94c3e94] Changed the filename of original .
+		Date: Tue May 2 19:16:24 2023 -0400
+		1 file changed, 0 insertions(+), 0 deletions(-)
+.		rename KCC Logo.png => Primary Logo.png (100%)
+	
+	$ git log --oneline														<-- try:    git log --oneline --graph
+	
+	94c3e94 (HEAD -> main) Changed the filename of original .png image		<-- see change from that of previous ID 87a682d
+	48b2aa5 updated to free range
+	bb33ff5 second commit - commiting all files to the repository
+	397a6d6 first commit - commiting all files to the repository
+	
+But, if you want to see all of the previous changes, you can,... use the '-p' switch:
+	$ git log -p												
+	
+
+You can always jump back to a previous commit using the hash (ID) of that commit:  ID 48b2aa5
+	$ git reset 48b2aa5    
+
+or you may wish to see all changes in the history book, with option 'rebase' , it will bring you into an git statuseditor.
+	$ git rebase -i --root
+
+
+Setup additional branches:
+-------------------------
+
+Create a new branch to play around with file 'secret recipe.htm' 
+Call the new branch 'FixTemp'
+  
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)   
+	$ git branch FixTemp										<-- can also create a new branch with : git checkout -b ~branch name~
+  
+	$ git branch 									<-- shows us branch 'FixTemp' & 'main'
+	  FixTemp
+	* main											<-- the asteriks * implies we are currently in branch 'main'
+
+	$ git switch FixTemp							<-- lets switch from branch 'main' to 'FixTemp'
+	Switched to branch 'FixTemp'					<-- can also switch between branches: git checkout ~branch name~
+	
+	$ git branch
+	* FixTemp										<-- the asteriks * implies we are currently in branch 'FixTemp'
+	  main
+	
+	You can also switch between current and last branch worked on with :  ' git checkout - '
+	
+	
+Change temperature value from 500ºF to 350ºF in 'secret recipe.htm' file and save it.
+Check status of branch, remember we are in branch 'FixTemp'
+	
+	$ git status
+	...
+	modified:   secret recipe.htm
+	
+	$ git commit -a -m "updated temperature for baking instructions"		<-- let's commit change
+	[FixTemp 06ac210] updated temperature for baking instructions
+	1 file changed, 1 insertion(+), 1 deletion(-)
+
+Let's switch back to main:
+
+	$ git switch main									<-- checking file 'secret recipe.htm' we see temperature still refers to 500ºF
+
+	So we only changed to 350ºF in the 'FixTemp' branch,.. now we need to bring that change into 'main' branch with a 'merge'
+	
+	$ git merge -m "Merge fixtemp back to main" FixTemp		<-- merging 'FixTemp' branch into branch 'main'
+	
+	Updating 94c3e94..06ac210
+	Fast-forward (no commit created; -m option ignored)
+	secret recipe.htm | 2 +-
+	1 file changed, 1 insertion(+), 1 deletion(-)
+	
+
+Now that we merged the change, we no longer have a need for branch 'FixTemp' get rid of it
+
+	$ git branch -d FixTemp
+	Deleted branch FixTemp (was 06ac210)					<-- branch 'FixTemp' is deleted
+	
+	$ git branch
+	* main
+
+	Problem may arise in situation where branch main has changed after changes to spinned of branch and a merge is attempted,
+	you'll have a merge conflict!
+	
+Create a new branch 'UpdateText'
+ 
+	$ git switch -c UpdateText 			<-- create and switch into new branch 'Updatetext' in one command
+	Switched to a new branch 'UpdateText'
+	
+	$ git branch
+	* UpdateText
+	  main
+	
+  make changes to 'index.htm' file and save it
+  and then commit these changes
+	
+	$ git commit -a -m "update index.htm text entry"
+	[UpdateText a6a70f2] update index.htm text entry
+	1 file changed, 1 insertion(+), 1 deletion(-)
+
+  now switch into main and make a change their as well in the 'index.htm' file and save it
+	
+	$ git switch main
+	Switched to branch 'main'							<-- so back to branch 'main'
+
+	$ git commit -a -m "update index.htm text" 			<-- commiting change while in branch 'main'
+	[main efe865d] update index.htm text
+	1 file changed, 1 insertion(+), 1 deletion(-)
+	
+	$ git merge UpdateText								<-- see what happens when trying to merge previous change made in branch 'UpdateText'
+    Auto-merging index.htm
+	CONFLICT (content): Merge conflict in index.htm						<-- Ooops, CONFLICT !
+	Automatic merge failed; fix conflicts and then commit the result.
+
+
+ Open the 'index.htm' file in notepad to check content, we see:
+	
+	...
+	<<<<<<< HEAD
+	<p>Every cookie made at the Kevin Cookie company is crafted with only the most amazing ingredients. Butter from grass fed cows. Unbleached flour with the best flavor and textures. Organic sugar only from India. Eggs from chickens that are free range. Even our water is special. It comes from the Cascade Mountain springs that we hike up to retrieve. Baking is our passion and we take it very seriously.</p>
+	=======
+	<p>Every cookie made at the Kevin Cookie company is crafted with only the best ingredients. Butter from grass fed cows. Unbleached flour with the best flavor and textures. Organic sugar only from India. Eggs from chickens that are free range. Even our water is special. It comes from the Cascade Mountain springs that we hike up to retrieve. Baking is our passion and we take it very seriously.</p>
+	>>>>>>> UpdateText
+	...
+	
+ The HEAD is the current reality of what you have now in branch 'main' but we want to bring 
+ in what was changed in branch 'UpdateText'... you can deide which one you want to keep.
+ 
+ To do so, delete everything in "<<<<<<< HEAD ..." and the "<<<<<<< UpdaText"  the lines will look like this:
+ 
+	<p>Every cookie made at the Kevin Cookie company is crafted with only the best ingredients. Butter from grass fed cows. Unbleached flour with the best flavor and textures. Organic sugar only from India. Eggs from chickens that are free range. Even our water is special. It comes from the Cascade Mountain springs that we hike up to retrieve. Baking is our passion and we take it very seriously.</p>
+
+ ,.. save the 'index.htm' file.
+
+ Now commit the change:
+	
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main|MERGING)				<-- notice the (main|MERGING)
+	$ git commit -a -m "update text in index.htm file"
+	[main a230979] update text in index.htm file
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)						<-- is now only displaying (main)
+
+
+So we have been working with a GIT repository that's hosted on your local computer.
+You can also host your GIT repository in the cloud, hence GitHub !
+
+
+G I T H U B   Repository -  https://github.com  ( !P..s0..mv )
+----------------------------------------------
+https://www.youtube.com/watch?v=tRZGeaHPoaw   @ minute 33:25
+
+1) Create a GitHub account !
+
+  While in GIT Bash you may need to run an ssh-keygen.
+  creates key in /c/Users/jara/.ssh/id_rsa.pub
+
+  Click the pull down menu in top left corner and select [Settings] 
+  In left hand column select [SSH and GPG keys]
+  Copy content of "cat /c/Users/jara/.ssh/id_rsa.pub" to Github's 'SSH keys' section in the [Authentication keys] box
+  
+I had a few problems here,.. not sure which of my multiple actions solved issue #$%^&!!!
+,.. anyhooo... continued.
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git remote set-url origin https://github.com/jara2000/KevinCookie.Company.com.gi
+	
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git push --set-upstream origin main
+	Enumerating objects: 27, done.
+	Counting objects: 100% (27/27), done.
+	Delta compression using up to 16 threads
+	Compressing objects: 100% (25/25), done.
+	Writing objects: 100% (27/27), 254.70 KiB | 31.84 MiB/s, done.
+	Total 27 (delta 12), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (12/12), done.
+	To https://github.com/jara2000/KevinCookie.Company.com.git
+	* [new branch]      main -> main
+	branch 'main' set up to track 'origin/main'.
+
+ Since we had a branch earlier named 'UpdateText' why not push them up to GitHub...
+ 
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git push --all
+	
+	Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+	remote:
+	remote: Create a pull request for 'UpdateText' on GitHub by visiting:
+	remote:      https://github.com/jara2000/KevinCookie.Company.com/pull/new/UpdateText
+	remote:
+	To https://github.com/jara2000/KevinCookie.Company.com.git
+	* [new branch]      UpdateText -> UpdateText
+	
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ 
+
+
+After uploading local GIT repo to the cloud and making changes on the cloud repo
+we may want to download the updated GIT repo in the cloud back to our local PC !
+
+Here's how:
+
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git fetch
+	$ git merge
+or
+	jara@i5-12600K MINGW64 ~/KevinCookie.Company.com (main)
+	$ git pull														<-- 'pull' will combine both 'fetch' & 'merge'
+	
+	remote: Enumerating objects: 6, done.
+	remote: Counting objects: 100% (6/6), done.
+	remote: Compressing objects: 100% (4/4), done.
+	remote: Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+	Unpacking objects: 100% (4/4), 1.33 KiB | 67.00 KiB/s, done.
+	From https://github.com/jara2000/KevinCookie.Company.com
+	a230979..293da0c  main                    -> origin/main
+	* [new branch]      includePhilippinesSugar -> origin/includePhilippinesSugar
+	* [new tag]         release                 -> release
+	Updating a230979..293da0c
+	Fast-forward
+	index.htm | 4 ++--
+	1 file changed, 2 insertions(+), 2 deletions(-)
