@@ -1,20 +1,12 @@
-https://dxctime.dxc.com
-
-CC chatroom:  PWC CC Communications
-
-WCALQALF replacing WCALQB0K
 
 ZCAHQU01  <-- Use for mkdir on ISILON
 
 -----------------------------------------------------------------------------------
 For those stupid tricky mfstgXXX  folders !!
   Jon :   Look at   wcalqaiz & wcahqa68 	cat /etc/netgroup |grep -w nfs_mfstgpr1
-  Yang:   Look at   wcahqk2w       			cat /etc/netgroup |grep -w nfs_mfstgQAE
+  Yang:   Look at   wcahqk2w       			  cat /etc/netgroup |grep -w nfs_mfstgQAE
 -----------------------------------------------------------------------------------
 
-Lisa Neath retiring on Dec. 3 -> replaced by Kimberly Kelly
-
-Labour Types "Training Home CC"
 
 automount -m   <- On Linux will list all automounts
 lanscan -q
@@ -24,32 +16,22 @@ auditctl -e 0   <-- On wcalqk7e  to stop auditd
 zcat file.gz    <-- to read .gz file
 
 D0ntt0uchm3!   
-K6!bXcvD$yq7qqAY  /  wcahqq0h-console 
-Get2Work	(search SSU Admin for :  console-hp )
 
-Wr46Axaf
-WR46Axaf
+Get2Work	(search SSU Admin for :  console-hp )
 
 export PATH=/opt/hpvm/bin:$PATH
 
-Vi7Sion8 
 
-New JumpBoxes - zcahqu02 + zcalqu08
-
-
-Crash-n-Burn -> zcalqu07
 RHEL8 -> rmc1 & rmc5  (zcalqu08 & zcahqu02 ) - will replace zcalqu03
 
 
-
-*DSR - (833)391-8638, Access Code: 224837829
 ( \\automount\pwc\prodops\DSR\minutes  )
 
    
 *Goto http://www.hpe.com/info/softwaredepot  to download bundles above!
 
  Goto  https://support.hpe.com/hpesc/public/home    for patches, case mgmt. 
-	   https://support.hpe.com/hpsc/patch/content?action=homepas
+ 	     https://support.hpe.com/hpsc/patch/content?action=homepas
 	   
 
 
