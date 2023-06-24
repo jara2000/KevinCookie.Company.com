@@ -24,14 +24,12 @@ export PATH=/opt/hpvm/bin:$PATH
 
 RHEL8 -> rmc1 & rmc5  (zcalqu08 & zcahqu02 ) - will replace zcalqu03
 
-
 ( \\automount\pwc\prodops\DSR\minutes  )
-
    
 *Goto http://www.hpe.com/info/softwaredepot  to download bundles above!
 
  Goto  https://support.hpe.com/hpesc/public/home    for patches, case mgmt. 
- 	     https://support.hpe.com/hpsc/patch/content?action=homepas
+	     https://support.hpe.com/hpsc/patch/content?action=homepas
 	   
 
 
