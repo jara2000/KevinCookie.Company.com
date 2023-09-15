@@ -1,3 +1,3 @@
 # ignore all .txt and .url files
-#*.txt
+*.txt
 *.url
